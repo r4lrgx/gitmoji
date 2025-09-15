@@ -1,4 +1,4 @@
-![Header](https://github.com/r4lrgx/gitmoji/assets/153697070/34e8e1d7-67ba-4051-9e0d-86c547e5049b)
+![Header](https://github.com/user-attachments/assets/34e8e1d7-67ba-4051-9e0d-86c547e5049b)
 
 <div align="center">
   <a aria-label="Written with" href="https://www.typescriptlang.org/">
