@@ -1,0 +1,125 @@
+{
+ "name": "@r4lrgx/gitmoji",
+ "version": "1.0.0",
+ "description": "🧱 My customized Gitmoji Config - a fork of https://github.com/arvinxx/gitmoji-commit-workflow - just with several bug fixes and a cleaner look.",
+ "funding": "https://github.com/sponsors/r4lrgx",
+ "homepage": "https://github.com/r4lrgx/gitmoji#readme",
+ "type": "module",
+ "exports": {
+  ".": {
+   "types": "./dist/index.d.ts",
+   "import": "./dist/index.js"
+  },
+  "./changelog-config": {
+   "types": "./dist/changelog-config/index.d.ts",
+   "import": "./dist/changelog-config/index.js"
+  },
+  "./changelog-config/types": {
+   "types": "./dist/changelog-config/types/index.d.ts",
+   "import": "./dist/changelog-config/types/index.js"
+  },
+  "./commit-types": {
+   "types": "./dist/commit-types/index.d.ts",
+   "import": "./dist/commit-types/index.js"
+  },
+  "./commit-types/types": {
+   "types": "./dist/commit-types/types/index.d.ts",
+   "import": "./dist/commit-types/types/index.js"
+  },
+  "./commitlint-config": {
+   "types": "./dist/commitlint-config/index.d.ts",
+   "import": "./dist/commitlint-config/index.js"
+  },
+  "./commitlint-config/plugin": {
+   "types": "./dist/commitlint-config/plugin/index.d.ts",
+   "import": "./dist/commitlint-config/plugin/index.js"
+  },
+  "./parser": {
+   "types": "./dist/parser/index.d.ts",
+   "import": "./dist/parser/index.js"
+  },
+  "./regexs": {
+   "types": "./dist/regexs/index.d.ts",
+   "import": "./dist/regexs/index.js"
+  }
+ },
+ "scripts": {
+  "clean": "rimraf dist",
+  "build": "pnpm run clean && tsup --config tsup.config.ts && cpy 'src/changelog-config/**/*.hbs' 'dist/changelog-config/' --parents",
+  "publish-pkg": "pnpm publish --access public --no-git-checks --provenance",
+  "publish-pkg:next": "pnpm publish --access public --no-git-checks --provenance --tag next",
+  "publish-pkg:test": "pnpm publish --access public --no-git-checks --provenance --dry-run",
+  "format": "prettier . --write --cache --ignore-unknown",
+  "format:check": "prettier . --check --ignore-unknown",
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
+ },
+ "license": "MIT",
+ "author": {
+  "name": "r4lrgx",
+  "email": "tsx@r4lrgx.dev"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/r4lrgx/gitmoji.git"
+ },
+ "bugs": {
+  "url": "https://github.com/r4lrgx/gitmoji/issues"
+ },
+ "files": [
+  "dist",
+  "README.md",
+  "license.md"
+ ],
+ "keywords": [
+  "git",
+  "gitmoji",
+  "gitmojis",
+  "git-emoji",
+  "git-commit",
+  "commit",
+  "conventional-commits",
+  "changelog",
+  "commitlint",
+  "typescript",
+  "nodejs"
+ ],
+ "dependencies": {
+  "@commitlint/format": "^19.8.1",
+  "chalk": "^5.6.2",
+  "cosmiconfig": "^9.0.0",
+  "emoji-regex": "^10.5.0",
+  "gitmojis": "^3.15.0",
+  "lodash": "^4.17.21",
+  "pangu": "^4.0.7",
+  "sync-fetch": "0.6.0-2"
+ },
+ "devDependencies": {
+  "@commitlint/types": "^19.8.1",
+  "@types/lodash": "^4.17.20",
+  "@types/node": "22.15.30",
+  "@types/pangu": "^4.0.2",
+  "@types/sync-fetch": "^0.4.3",
+  "cpy-cli": "^6.0.0",
+  "glob": "^11.0.3",
+  "rimraf": "6.0.1",
+  "tsup": "^8.5.0",
+  "typescript": "^5.9.2"
+ },
+ "publishConfig": {
+  "access": "public",
+  "provenance": true
+ },
+ "types": "./dist/index.d.ts",
+ "typesVersions": {
+  "*": {
+   "*": [
+    "./dist/index.d.ts"
+   ]
+  }
+ },
+ "engines": {
+  "node": ">=20.0.0"
+ },
+ "packageManager": "pnpm@10.15.0"
+}

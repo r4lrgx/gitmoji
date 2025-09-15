@@ -1,0 +1,30 @@
+{{> header}}
+
+{{#each commitGroups}}
+{{#if title}}
+### {{title}}
+{{/if}}
+
+{{#each commits}}{{#if first}}- {{#if scope}}**{{scope}}**: {{/if}}{{subject}}{{else}}{{rawSubject}}{{/if}}{{#if last}}.
+{{else}}, {{/if}}{{/each}}
+{{/each}}
+
+<br/>
+
+{{gitUserInfo}}
+
+<details>
+<summary>What's New &amp; Fixed 🥂</summary>
+
+{{#each commitGroups}}
+{{#if title}}
+### {{subtitle}}
+{{/if}}
+
+{{#each commits}}
+{{> commit root=@root}}
+{{/each}}
+{{/each}}
+</details>
+
+{{> footer}}
